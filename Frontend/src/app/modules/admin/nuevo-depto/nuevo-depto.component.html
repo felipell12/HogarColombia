@@ -1,0 +1,19 @@
+<div class="container">
+    <div id="logbox">
+        <form [formGroup]="fgValidatorNew" method="post" (ngSubmit)="crear()">
+            <h1>Nuevo Departamento</h1>
+            <div class="form-row">
+                <div class="col">
+                    <input formControlName="nombre" name="user[nombre]" type="text" placeholder="Nombre"
+                        required="required" class="input pass" />
+
+                </div>
+            </div>
+            <button [disabled]="!fgValidatorNew.valid" type="submit" value="Ingresar "
+                class="inputButton">Ingresar</button>
+
+            <!-- <button type="submit" value="Ingresar"
+                class="inputButton">Ingresar</button> -->
+        </form>
+    </div>
+</div>

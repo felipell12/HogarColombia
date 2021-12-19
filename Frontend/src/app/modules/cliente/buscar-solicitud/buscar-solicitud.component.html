@@ -1,0 +1,39 @@
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+<h1 class="display-1 text-center">LISTA DE SOLICITUDES REALIZADAS</h1>
+<br>
+<div class="table-responsive">
+    <table class="table align-middle">
+        <thead>
+            <tr>
+                <th class="align-middle text-center col-2">Imagen</th>
+                <th class="align-middle ">Estado</th>
+                <th class="align-middle ">Tipo de Oferta</th>
+                <th class="align-middle ">Tipo de Inmueble</th>
+                <th class="align-middle ">Valor</th>
+                <th class="align-middle ">Ciudad</th>
+                <th class="align-middle ">Dirección</th>
+                <th class="align-middle "></th>
+                <th class="align-middle "></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let i of listaCompleta">
+              <td class="align-middle col-2" *ngIf="i.boton5"><img src="{{i.foto}}" class="img-inmueble img-thumbnail"></td>
+                <td class="align-middle" *ngIf="i.boton5">{{i.estado}} </td>
+                <td class="align-middle" *ngIf="i.boton5">{{i.tipoOferta}} </td>
+                <td class="align-middle" *ngIf="i.boton5">{{i.tipoInmueble}} </td>
+                <td class="align-middle" *ngIf="i.boton5">{{i.valor | currency}} </td>
+                <td class="align-middle" *ngIf="i.boton5">{{i.ciudad}} </td>
+                <td class="align-middle" *ngIf="i.boton5">{{i.direccion}}</td>
+                <td *ngIf="i.boton1" class="align-middle"><button type="button" class="btn btn-danger text-boton-lista"                   
+                    [routerLink]="['/cliente/eliminar-solicitud',i.id]" >Eliminar</button></td>
+                <td *ngIf="i.boton2" class="align-middle"><button type="button" class="btn btn-primary text-boton-lista">Descargar Contrato</button></td>
+                <td *ngIf="i.boton2" class="align-middle"><button type="button" class="btn btn-primary text-boton-lista">Adjuntar Contrato</button></td>
+                <td *ngIf="i.boton3" class="align-middle"><button type="button" class="btn btn-primary text-boton-lista">Ver Comentarios</button></td>
+                <td *ngIf="i.boton4" class="align-middle"><button type="button" class="btn btn-success text-boton-lista">Ver Contrato</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<br>

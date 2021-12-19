@@ -1,0 +1,18 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+  <div class="container">
+    <div id="logbox">
+      <form [formGroup]="fgValidatorLogin" id="login" method="post" (ngSubmit)="LoginUsuario()">
+        <h1>Iniciar Sesión</h1>
+        <input formControlName="email" name="user[email]" type="email" placeholder="Ingrese su Correo Electrónico" required="required" class="input pass"/>
+        <input formControlName="password" name="user[password]" type="password" placeholder="Ingrese su contraseña" required="required" class="input pass"/>
+        <button [disabled]="!fgValidatorLogin.valid" type="submit" value="Ingresar" class="inputButton">Ingresar</button>
+        <div class="text-center">
+          <a routerLink="/security/signup" id="">Crear una nueva cuenta</a> - <a routerLink="/security/password-recovery" id="">Recuperar Clave</a>
+        </div>
+      </form> 
+    </div>
+  </div>

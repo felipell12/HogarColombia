@@ -1,0 +1,81 @@
+<div>
+    <h3 style="text-align:center">Crear Inmueble</h3>
+    <form [formGroup]="fgValidador" method="post" (ngSubmit)="GuardarProperty()">
+        <div class="form-group">
+            <label for="nombre" class="control-label">Nombre Completo</label>
+            <input formControlName="nombre" type="text" class="form-control" id="full_name_id" name="nombre"
+                placeholder="juan garcia">
+            <br>
+            <label for="valor" class="control-label">Valor</label>
+            <input formControlName="valor" type="text" class="form-control" id="valor_id" name="valor" placeholder="0">
+            <br>
+            <!--<div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <form method="post" action="#" id="#">
+                        <div class="form-group files">
+                            <label>subir fotos </label>
+                            <input type="file" class="form-control" multiple="">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>-->
+            <label for="contactoEncargado" class="control-label">Contacto Encargado</label>
+            <input formControlName="contactoEncargado" type="text" class="form-control" id="contactoEncargado_id"
+                name="contactoEncargado" placeholder="3254557">
+            <br>
+            <div class="row">
+                <div class="col-md-6">
+                    <label class="control-label">Departamento</label>
+                    <select id="SeleccionarDepartamento" class="form-select1">
+                        <option value="0">Seleccione Departamento</option>
+                        <option [value]="Departamento" *ngFor="let Departamento of listaDepartamentos">
+                            {{Departamento.nombre}}</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label class="control-label">Ciudad</label>
+                    <select formControlName="ciudadId" id="SeleccionarCiudad" class="form-select2" required>
+                        <option value="0">seleccione ciudad</option>
+                        <option [value]="Ciudad" *ngFor="let Ciudad of listaCiudades">{{Ciudad.nombre}}</option>
+                    </select>
+                </div>
+            </div>
+            <br>
+            <label for="direccion" class="control-label">Direccion</label>
+            <input formControlName="direccion" type="text" class="form-control" id="direccion_id" name="direccion"
+                placeholder="cra 50">
+            <br>
+            <div class="row">
+                <div class="col-md-6">
+                    <label class="control-label">Tipo Oferta</label>
+                    <select formControlName="tipoOferta" id="SeleccionarOferta" class="form-select3" required>
+                        <option value="0">Seleccione ofeta</option>
+                        <option value="1">Compra</option>
+                        <option value="2">Alquiler</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label class="control-label">Tipo Inmueble</label>
+                    <select formControlName="tipoInmuebleId" id="SeleccionarTipoInmueble" class="form-select4" required>
+                        <option value="0">seleccione tipo inmueble</option>
+                        <option [value]="tipoinmueble" *ngFor="let tipoinmueble of listatipoInmueble">
+                            {{tipoinmueble.nombre}}</option>
+                    </select>
+                </div>
+            </div>
+            <br>
+            <label for="foto" class="control-label">Url Foto</label>
+            <input formControlName="foto" type="text" class="form-control" id="foto_id" name="foto"
+                placeholder="https://www.imagenes.com/1024x629.jpg">
+            <br>
+            <label for="video" class="control-label">Url Video</label>
+            <input formControlName="video" type="text" class="form-control" id="video_id" name="video"
+                placeholder="https://www.youtube.com/watch?v=-Hvmj8yXfyU">
+            <br>
+            <button [disabled]="!fgValidador.valid" type="submit" class="btn btn-primary">crear</button>
+        </div>
+    </form>
+</div>
+<br>

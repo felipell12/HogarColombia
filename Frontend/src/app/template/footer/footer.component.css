@@ -1,0 +1,11 @@
+body {
+    font-family: "Open Sans", sans-serif;
+  }
+
+  .page-footer {
+    background: #fff;
+    padding-left: 16px;
+    padding-right: 16px;
+    border: 1px solid #dfe3e8;
+    border-radius: 0;
+  }

@@ -1,0 +1,20 @@
+<br>
+<div class="row align-items-start">
+    <div class="col-3 " *ngFor="let i of listaInmuebles">
+        <form action="" id="{{i.id}}" method="post" (ngSubmit)="solicitar(i.id)">
+            <div class="card" style="width: 18rem;">
+                <img src="{{i.foto}}" class="card-img-top .img-inmueble" alt="">
+                <div class="card-body">
+                    <h5 class="card-title">{{i.tipoOferta}} - {{i.valor | currency}}</h5>
+                    <p class="card-text">Tipo de Inmueble: {{i.tipoInmuebleId}}</p>
+                    <p class="card-text">Ciudad: {{i.ciudadId}}</p>
+                    <p class="card-text">Dirección: {{i.direccion}}</p>
+                    <p class="card-text" style="display: none;">id: {{i.id}}</p>
+                    <p class="card-text" style="display: none;">Estado: {{i.estado}}</p>
+                    <button type="submit" value="Ingresar" class="btn btn-primary">Solicitar Inmueble</button>
+                </div>
+            </div><br>
+        </form>
+    </div>
+</div>
+<br><br>

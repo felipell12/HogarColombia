@@ -1,0 +1,15 @@
+.thead-light {
+    color: whitesmoke;
+    background-color: #212529;
+  }
+  .form-select5{
+    width: 60%;
+    height: 20px;
+    border-radius: 5px;
+    border: 1px transparent;
+    padding: 0 15px;
+    font-size: 14px;
+    color: whitesmoke;
+    background-color:#212529;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }

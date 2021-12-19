@@ -1,0 +1,65 @@
+<div>
+    <div class="col-md-4"></div>
+    <div class="col-md-4"></div>
+    <div class="col-md-2"></div>
+    <div class="col-md-2">
+        <a class="btn btn-primary" href="adviser/property-create" role="button">crear</a>
+    </div>
+</div>
+<br />
+<br />
+<div>
+    <table class="table">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">Direcion</th>
+                <th scope="col">Departamento</th>
+                <th scope="col">Ciudad</th>
+                <th scope="col">
+                    <select id="Seleccionarestado" class="form-select5">
+                        <option disabled selected>Estado</option>
+                        <option value="1">Activo</option>
+                        <option value="2">Inactivo</option>
+                    </select>
+                </th>
+                <th scope="col">Revision</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let p of listadoInmuebles">
+                <td>
+                    <a href="adviser/property-create" class="link-primary">{{p.direccion}}</a>
+                </td>
+                <td>
+                    {{p.contactoEncargado}}
+                </td>
+                <td>
+                    {{p.ciudadId}}
+                </td>
+                <td>
+                    {{p.estado}}
+                </td>
+                <td>
+                    <div>
+                        <a class="btn btn-primary" [routerLink]="['/adviser/find-solicitudes', p.id]" role="button">solicitudes</a>
+                        /
+                        <a class="btn btn-danger" [routerLink]="['/adviser/property-delete', p.id]"
+                            role="button">eliminar</a>
+                    </div>
+                </td>
+        </tbody>
+    </table>
+</div>
+<br />
+<br />
+<div>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+        </ul>
+    </nav>
+</div>

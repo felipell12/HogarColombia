@@ -1,0 +1,36 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<div class="container">
+    <div id="logbox">
+        <form [formGroup]="fgValidatorSignup" id="signup" method="post" action="/signup" (ngSubmit)="SignupCliente()">
+            <h1>Crear nueva cuenta</h1>
+            <div class="form-row">
+                <div class="col-md-6 mb-2">
+                    <input formControlName="nombre" name="user[nombre]" type="text" placeholder="Nombres" required="required" class="input pass"/>
+                </div>
+                <div class="col-md-6 mb-2">
+                    <input formControlName="apellido" name="user[apellido]" type="text" placeholder="Apellidos" required="required" class="input pass"/>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-6 mb-2">
+                    <input formControlName="tipodocumento" name="user[tipodocumento]" type="text" placeholder="Tipo de Documento" required="required" class="input pass"/>
+                </div>
+                <div class="col-md-6 mb-2">
+                    <input formControlName="documento" name="user[documento" type="text" placeholder="Número de documento" required="required" class="input pass"/>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-6 mb-2">
+                    <input formControlName="email" name="user[email]" type="email" placeholder="Correo Electrónico" class="input pass"/>
+                </div>
+                <div class="col-md-6 mb-2">
+                    <input formControlName="telefono" name="user[telefono]" type="text" placeholder="Teléfono" required="required" class="input pass"/>        
+                </div>
+            </div>
+            <button [disabled]="!fgValidatorSignup.valid" type="submit" value="Ingresar" class="inputButton">Ingresar</button>
+       </form>
+    </div>
+</div>
